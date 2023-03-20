@@ -1,15 +1,13 @@
 package DZ_OOP_JAVA.DZ_SEMINAR_2.DZ_SEMINAR_2_3;
 
-import java.time.LocalDate;
-
 /**
  * Абстрактный класс для живых существ
  */
 public abstract class Animal {
     private String name;
-    private LocalDate age;
+    private int age;
     private String color;
-    private double weight;
+    protected double weight;
     private double height;
     private double width;
     private double length;
@@ -18,16 +16,16 @@ public abstract class Animal {
      * Задание конструктора с параметрами:
      * 
      * @param name   - имя
-     * @param age    - возраст
-     * @param color  - оттенок
-     * @param weight - вес
+     * @param age    - возраст, лет
+     * @param color  - окрас
+     * @param weight - вес, кг
      * 
      *               Габаритный размер:
-     * @param height - высота
-     * @param width  - ширина
-     * @param length - длина
+     * @param height - высота, м
+     * @param width  - ширина, м
+     * @param length - длина, м
      */
-    public Animal(String name, LocalDate age, String color, double weight, double height, double width, double length) {
+    public Animal(String name, int age, String color, double weight, double height, double width, double length) {
         this.name = name;
         this.age = age;
         this.color = color;
@@ -45,11 +43,11 @@ public abstract class Animal {
         this.name = name;
     }
 
-    public LocalDate getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(LocalDate age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -91,5 +89,10 @@ public abstract class Animal {
 
     public void setLength(double length) {
         this.length = length;
+    }
+
+    public String getInfo() {
+        return String.format("Name: %s\nAge: %d\nColor: %s\nWeight: %f\nHeight: %f\nWidth: %f\nLength: %f\n",
+                this.name, this.age, this.color, this.weight, this.height, this.width, this.length);
     }
 }
