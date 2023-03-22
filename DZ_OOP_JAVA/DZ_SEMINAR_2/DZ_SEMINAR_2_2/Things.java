@@ -42,4 +42,7 @@ public abstract class Things {
         this.sizeClothes = sizeClothes;
     }
 
+    public String getInfo(){
+        return String.format("name: %s, purity: %d, sizeClothes: %d", name, purity, sizeClothes);
+    }
 }
