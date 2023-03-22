@@ -1,6 +1,7 @@
 package DZ_OOP_JAVA.DZ_SEMINAR_2.DZ_SEMINAR_2_2;
 
 import java.util.ArrayList;
+
 /**
  * Абстрактный класс для любых емкостей, хранилиш
  */
@@ -8,17 +9,18 @@ public abstract class Сontainer {
     private String name;
     private int capacitySize;
     private boolean containerOpen;
-    private ArrayList<Object> inside;
+    private ArrayList<Things> inside;
 
     /**
      * Данные о хранилище:
-     * @param name - название хранилища
-     * @param capacitySize - свободного места осталось
+     * 
+     * @param name          - название хранилища
+     * @param capacitySize  - свободного места осталось
      * @param containerOpen - открыть дверь/закрыть дверь true/false
-     * @param inside - содержимое
+     * @param inside        - содержимое
      */
 
-    public Сontainer(String name, int capacitySize, boolean containerOpen, ArrayList<Object> inside) {
+    public Сontainer(String name, int capacitySize, boolean containerOpen, ArrayList<Things> inside) {
         this.name = name;
         this.capacitySize = capacitySize;
         this.containerOpen = containerOpen;
@@ -41,11 +43,11 @@ public abstract class Сontainer {
         this.containerOpen = containerOpen;
     }
 
-    public ArrayList<Object> getInside() {
+    public ArrayList<Things> getInside() {
         return inside;
     }
 
-    public void setInside(ArrayList<Object> inside) {
+    public void setInside(ArrayList<Things> inside) {
         this.inside = inside;
     }
 
@@ -59,10 +61,11 @@ public abstract class Сontainer {
 
     public void getInfo() {
         System.out.printf("Capacity size: %d\n", getCapacitySize());
-        System.out.println("Inside:");
+        System.out.print("\nInside:");
 
-        for (Object object : inside) {
-            System.out.printf("%s, %d, %d", object);
+        for (Things object : inside) {
+            System.out.printf("\nName: %s\nPurity: %d\nSizeClothes: %d\n", object.getName(), object.getPurity(),
+                    object.getSizeClothes());
         }
     }
 
