@@ -6,7 +6,7 @@ import java.util.ArrayList;
  */
 public class Wardrobe extends Сontainer{
 
-    public Wardrobe(String name, int capacitySize, boolean containerOpen, ArrayList<Object> inside) {
+    public Wardrobe(String name, int capacitySize, boolean containerOpen, ArrayList<Things> inside) {
         super(name, capacitySize, containerOpen, inside);
     }
     
